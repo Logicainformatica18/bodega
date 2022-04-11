@@ -3,7 +3,7 @@
    //Configuracion de la conexion a base de datos
    protected $bd_host = "localhost"; 
    protected $bd_usuario = "root"; 
-   protected $bd_password = ""; 
+   protected $bd_password = "12345678"; 
    protected $bd_base = "bodega";
    protected $con; 
    public function open(){

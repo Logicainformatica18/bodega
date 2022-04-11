@@ -1,23 +1,29 @@
 <?php
 include("head.php");
-include('php/functioncategorias.php');
+include('functioncategorias.php');
 ?>
 
-<!--overview start-->
-<div class="row">
-    <div class="col-lg-12">
-        <h3 class="page-header"><i class="fa fa-table"></i> Categorías</h3>
-        <ol class="breadcrumb">
-            <li><i class="fa fa-home"></i><a href="index.php">Home</a></li>
-            <li><i class="fa fa-table"></i>Categorías</li>
-        </ol>
-    </div>
-</div>
 
-
-<!-- Button trigger modal -->
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h3 class="page-header"><i class="fa fa-table"></i> Categorías</h3>
+            </div><!-- /.col -->
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="index.php">Inicio</a></li>
+                    <li class="breadcrumb-item active">Tabla</li>
+                    <li class="breadcrumb-item active">Categorías</li>
+                </ol>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+  <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
     onclick="categoriasNuevo();">Agregar</button>
+    </div><!-- /.container-fluid -->
+</div>
+<!-- /.content-header -->
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -25,7 +31,7 @@ include('php/functioncategorias.php');
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title" id="exampleModalLabel">Editar Categorias</h4>
+                <h4 class="modal-title" id="exampleModalLabel">Gestionar Categorias</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -54,9 +60,6 @@ include('php/functioncategorias.php');
         </div>
     </div>
 </div>
-
-<h6><b>Buscar</b></h6>
-<input type="text" class="form-control" name="criterio" onkeypress="categoriasSearch();">
 
 <p></p>
 

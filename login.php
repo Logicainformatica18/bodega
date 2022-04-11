@@ -1,66 +1,61 @@
 <?php
-include 'php/functionperson.php';
+if (!class_exists("session")) {
+   include "session.php";
+  }
+include 'functionperson.php';
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Creative - Bootstrap 3 Responsive Admin Template">
-    <meta name="author" content="GeeksLabs">
-    <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
-    <link rel="shortcut icon" href="img/favicon.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Administrador | Login </title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Login Page 2 | Creative - Bootstrap 3 Responsive Admin Template</title>
-
-    <!-- Bootstrap CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <!-- bootstrap theme -->
-    <link href="css/bootstrap-theme.css" rel="stylesheet">
-    <!--external css-->
-    <!-- font icon -->
-    <link href="css/elegant-icons-style.css" rel="stylesheet" />
-    <link href="css/font-awesome.css" rel="stylesheet" />
-    <!-- Custom styles -->
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/style-responsive.css" rel="stylesheet" />
-
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 -->
-    <!--[if lt IE 9]>
-    <script src="js/html5shiv.js"></script>
-    <script src="js/respond.min.js"></script>
-    <![endif]-->
-
-    <!-- =======================================================
-      Theme Name: NiceAdmin
-      Theme URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
-      Author: BootstrapMade
-      Author URL: https://bootstrapmade.com
-    ======================================================= -->
-    <script src="function.js"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- icheck bootstrap -->
+    <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="dist/css/adminlte.min.css">
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+     <!-- Funciones ajax -->
+<script src="function.js"></script>
 </head>
 
-<body class="login-img2-body">
+<body class="hold-transition login-page">
+    <div class="login-box">
+        <div class="login-logo">
+            <a href="index2.html"><b>Inicio de Sesión</b>LTE</a>
+        </div>
+        <!-- /.login-logo -->
+        <div class="card">
+            <div class="card-body login-card-body">
+                <!-- <p class="login-box-msg">Sign in to start your session</p> -->
 
-    <div class="container">
-
-        <form class="login-form" id="person">
-            <div class="login-wrap">
-                <p class="login-img"><i class="icon_lock_alt"></i></p>
-                <div class="input-group">
-                    <span class="input-group-addon"><i class="icon_profile"></i></span>
-                    <input type="text" name="login" class="form-control" placeholder="Dni" autofocus>
-                </div>
-                <div class="input-group">
-                    <span class="input-group-addon"><i class="icon_key_alt"></i></span>
-                    <input type="password" name="password" class="form-control" placeholder="Password">
-                </div>
-                <!-- <label class="checkbox">
-                <input type="checkbox" value="remember-me"> Remember me
-                <span class="pull-right"> <a href="#"> Forgot Password?</a></span>
-            </label> -->
-                <div class="col s12">
+                <form action=""  id="person">
+                    <div class="input-group mb-3">
+                        <input type="text" name="login" class="form-control" placeholder="Dni" autofocus>
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-envelope"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-group mb-3">
+                        <input type="password" name="password" class="form-control" placeholder="Password">
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-lock"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-group mb-3">
                     <select name="cargo" id="cargos" class="form-control">
                         <?php
                         $con = new connection();
@@ -72,21 +67,60 @@ include 'php/functionperson.php';
                         }
                         ?>
                     </select>
-                    <p></p>
-                </div>
-                <button class="btn btn-primary btn-lg btn-block" type="button" onclick="personLogin(); return false">Login</button>
-                <!-- <button class="btn btn-info btn-lg btn-block" type="submit">Signup</button> -->
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-lock"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-8">
+                            <div class="icheck-primary">
+                                <!-- <input type="checkbox" id="remember">
+                                <label for="remember">
+                                    Remember Me
+                                </label> -->
+                            </div>
+                        </div>
+                        <!-- /.col -->
+                        <div class="col-4">
+                        <button class="btn btn-primary btn-block" type="button" onclick="personLogin(); return false">Login</button>
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                    <div id="resultado"></div>
+                </form>
+
+                <!-- <div class="social-auth-links text-center mb-3">
+                    <p>- OR -</p>
+                    <a href="#" class="btn btn-block btn-primary">
+                        <i class="fab fa-facebook mr-2"></i> Sign in using Facebook
+                    </a>
+                    <a href="#" class="btn btn-block btn-danger">
+                        <i class="fab fa-google-plus mr-2"></i> Sign in using Google+
+                    </a>
+                </div> -->
+                <!-- /.social-auth-links -->
+
+                <!-- <p class="mb-1">
+                    <a href="forgot-password.html">I forgot my password</a>
+                </p>
+                <p class="mb-0">
+                    <a href="register.html" class="text-center">Register a new membership</a>
+                </p> -->
             </div>
-        </form>
-
-        <div id="resultado"></div>
+            <!-- /.login-card-body -->
+        </div>
     </div>
-    </div>
+    <!-- /.login-box -->
 
+    <!-- jQuery -->
+    <script src="plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="dist/js/adminlte.min.js"></script>
 
+</body>
 
-
-    <?php
-
-    include "footer.php";
-    ?>
+</html>
