@@ -112,7 +112,7 @@ $r = mysqli_fetch_assoc($query);
 
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block"><?php echo $r["Nombre"] . " " . $r["Paterno"]; ?></a>
+                        <a href="index.php" class="d-block"><?php echo $r["Nombre"] . " " . $r["Paterno"]; ?></a>
                         <a href="logout.php">Cerrar Sesión</a>
                     </div>
                 </div>
